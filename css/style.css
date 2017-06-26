@@ -3,16 +3,27 @@
 }*/
 html {
   font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+#box {
+  -webkit-transition: all 1.5s ease; 
+  -moz-transition: all 1.5s ease; 
+  -o-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+
+#box.visible {
+  opacity: 1;
 }
 
 #title {
-  color: #fff;
   font-size: 3rem;
 }
 
 #temperature {
-  color: #fff;
-  font-size: 6rem;
+  /*font-size: 6rem;*/
   font-weight: 700;
 }
 
