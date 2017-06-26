@@ -1,0 +1,20 @@
+/*#weather-box {
+  height: 100rem;
+}*/
+
+#title, #temperature {
+  color: #fff;
+  font-size: 10rem;
+}
+
+#entire-page {
+  /*background-color: #333;*/
+  background: #0043a2;
+  background: radial-gradient(#0043A2, #09255B);
+}
+
+#weather-box {
+  border-radius: 10px;
+  background-color: rgba(100, 100, 100, .5);
+  width: 100%;
+}
