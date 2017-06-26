@@ -3,9 +3,16 @@ function resizePage() {
   $('#entire-page').height($(window).height());
 }
 
+function convertCtoF(celsius) {
+  return Math.round((celsius * 9 / 5 + 32) * 100) / 100;
+}
+
+function convertFtoC(farenheit) {
+  return Math.round(((farenheit - 32) * 5 / 9) * 100) / 100;
+}
+
 $(document).ready(function () {
   resizePage();
-  $(window).on('resize', resizePage);
 
   navigator.geolocation.getCurrentPosition(
   function (position) {
@@ -21,8 +28,32 @@ $(document).ready(function () {
       dataType: 'jsonp',
     })
     .done(function(json) {
+
+      // Guardamos la info del clima
+      /* Data que me interesa de json.currently:
+        * icon: [
+          clear-day, *
+          clear-night, *
+          rain, 
+          snow, 
+          sleet, 
+          wind, 
+          fog, 
+          cloudy, 
+          partly-cloudy-day,
+          partly-cloudy-night
+        ]
+        * precipType
+        * pressure
+        * summary
+        * temperature
+        * windSpeed
+      */
       currentWeather = json.currently;
-      // console.log(currentWeather);
+      console.log(json);
+      // console.table(currentWeather);
+      // console.log(convertFtoC(currentWeather));
+      // Hacemos la llamada al api de google para obtener la ubicacion actual
       $.ajax({
         url: urlPos,
         dataType: 'json',
@@ -35,6 +66,6 @@ $(document).ready(function () {
         user_location = "your location";
       });
     });
-    console.log(user_location, currentWeather);
   });
+  $(window).on('resize', resizePage);
 });
