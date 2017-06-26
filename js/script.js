@@ -29,7 +29,7 @@ $(document).ready(function () {
       })
       .done(function(json) {
         user_location = json.results[6].formatted_address;
-        $('#entire-page').html(`${currentWeather}, ${user_location}`);
+        
       })
       .fail(function() {
         user_location = "your location";
