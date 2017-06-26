@@ -14,22 +14,40 @@
 </head>
 <body>
   <div id="entire-page" class="valign-wrapper">
-    <div>
+    <div id="box">
       <div class="row">
         <div class="col s12">
           <h1 id="title" class="center">City, Country</h1>
         </div>
+      </div>
       <div class="row" style="margin: 0 .5rem;">
         <div id="weather-box" class="col s12 card-panel">
-          <div id="icon" class="col s8 offset-s2 valign-wrapper">
+          <div class="col s6">
+            <h2 id="temperature" class="center-align">27<span style="font-weight: 200;">&#176;C</span></h2>
+            <h5 id="summary">Summary</h5>
+          </div>
+          <div id="icon" class="col s6 valign-wrapper">
             <img src="icons/clear-night.png" alt="weather-icon" class="responsive-img" />
           </div>
-          <div class="col s6">
-            <h1 id="temperature" class="center-align">27</h1>
+          <div class="col s12">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Wind Speed</td>
+                  <td id="wind-speed">1</td>
+                </tr>
+                <tr>
+                  <td>Humidity</td>
+                  <td id="humidity">1</td>
+                </tr>
+                <tr>
+                  <td>Pressure</td>
+                  <td id="pressure">1</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      </div>
-        
       </div>
     </div>
   </div>
