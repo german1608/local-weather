@@ -1,20 +1,30 @@
 /*#weather-box {
   height: 100rem;
 }*/
+html {
+  font-family: 'Poppins', sans-serif;
+}
 
-#title, #temperature {
+#title {
   color: #fff;
-  font-size: 10rem;
+  font-size: 3rem;
+}
+
+#temperature {
+  color: #fff;
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+#icon {
+  /*padding-top: 1rem;*/
 }
 
 #entire-page {
-  /*background-color: #333;*/
-  background: #0043a2;
   background: radial-gradient(#0043A2, #09255B);
 }
 
 #weather-box {
   border-radius: 10px;
   background-color: rgba(100, 100, 100, .5);
-  width: 100%;
 }
