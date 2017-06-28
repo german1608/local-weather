@@ -1,4 +1,7 @@
-var celsius = true;
+// Store the current temperature. This helps me convert it from celsius to farenheit and vice-versa
+// without making repeated requests.
+var grades = 'C'; // default
+let temperature = 0;
 
 function resizePage() {
   // Helps center the content vertically
@@ -7,7 +10,7 @@ function resizePage() {
 
 function convertCtoF(celsius) {
   // Function to convert celsius to farenheit
-  return Math.round((celsius * 9 / 5 + 32) * 100);
+  return Math.round((celsius * 9 / 5 + 32));
 }
 
 function convertFtoC(farenheit) {
@@ -21,10 +24,6 @@ function roundTo2(n) {
 }
 
 $(document).ready(function () {
-  // Store the current temperature. This helps me convert it from celsius to farenheit and vice-versa
-  // without making repeated requests.
-  let temperature = 0;
-
   // Some variables to handle the show.
   let done1, done2;
 
@@ -55,11 +54,11 @@ $(document).ready(function () {
         // Save the info of the request:
 
         currWeather = json.currently;
-        temperature = currWeather.temperature;
+        temperature = convertFtoC(currWeather.temperature);
 
         // Change the content of the weather-box
         $('#temperature').html(`
-          ${convertFtoC(currWeather.temperature)}<span style="font-weight: 200;">&#176;C</span>`);
+          ${temperature}<span style="font-weight: 200;">&#176;${grades}</span>`);
         $('#icon').html(`
           <img src="icons/${currWeather.icon}.png" alt="${currWeather.icon}" class="responsive-img"/>`);
         $('#summary').text(currWeather.summary);
@@ -72,7 +71,7 @@ $(document).ready(function () {
         // request are done and we show the content of the page.
         done1 = true;
         if (done1 && done2){
-          $('.preloader-wrapper').removeClass('visible');
+          $('.preloader-wrapper').removeClass('visible').removeClass('active');
           
           $('#box').addClass('visible');
         }
@@ -116,7 +115,7 @@ $(document).ready(function () {
         $('#title').text(user_location);
         done2 = true;
         if (done1 && done2){
-          $('.preloader-wrapper').removeClass('visible');
+          $('.preloader-wrapper').removeClass('visible').removeClass('active');
           
           $('#box').addClass('visible');
         }
@@ -127,5 +126,20 @@ $(document).ready(function () {
     $('#weather-box').addClass('hide');
     $('#title').text("Your browser does'nt support navigator.");
   }
+  console.log(temperature);
   $(window).on('resize', resizePage);
+
+  $('#toggle').on('click', function() {
+    if (grades == 'C') {
+      temperature = convertCtoF(temperature);
+      grades = 'F';
+    } else {
+      temperature = convertFtoC(temperature);
+      grades = 'C';
+    }
+    let text = grades == 'F' ? 'celsius' : 'farenheit';
+    $('#temperature').html(`
+      ${temperature}<span style="font-weight: 200;">&#176;${grades}</span>`);
+    $(this).text( text );
+  })
 });

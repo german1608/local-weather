@@ -1,6 +1,7 @@
 html {
   font-family: 'Poppins', sans-serif;
   color: #fff;
+  background: radial-gradient(#0043A2, #09255B);
 }
 
 #box {
@@ -28,7 +29,7 @@ html {
 }
 
 #entire-page {
-  background: radial-gradient(#0043A2, #09255B);
+  
 }
 
 #weather-box {
@@ -67,6 +68,10 @@ table {
 
 table tr:nth-child(odd) {
   background: rgba(255, 255, 255, .3);
+}
+
+#toggle {
+  margin-top: 1rem;
 }
 
 @media only screen and (min-width: 601px) {
