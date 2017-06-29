@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html {
   font-family: 'Poppins', sans-serif;
   color: #fff;
@@ -77,4 +78,85 @@ table tr:nth-child(odd) {
 
 @media only screen and (min-width: 993px) {
 
+=======
+html {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+#box {
+  -webkit-transition: all 1.5s ease; 
+  -moz-transition: all 1.5s ease; 
+  -o-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+
+#box.visible {
+  opacity: 1;
+}
+
+#title {
+  font-size: 3rem;
+}
+
+#temperature {
+  font-weight: 700;
+}
+
+#icon img{
+  padding-top: 1rem;
+}
+
+#entire-page {
+  background: radial-gradient(#0043A2, #09255B);
+}
+
+#weather-box {
+  max-width: 40rem;
+  border-radius: 10px;
+  padding: 1.5rem 0;
+  background-color: rgba(100, 100, 100, .5);
+}
+
+.valign-wrapper {
+  justify-content: center;
+}
+
+.preloader-wrapper.visible {
+  -webkit-transition: all 1s ease; 
+  -moz-transition: all 1s ease; 
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  opacity: 1;
+}
+
+.preloader-wrapper {
+  opacity: 0;
+}
+
+.spinner-layer {
+  border-color: #fff;
+}
+
+
+table {
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+table tr:nth-child(odd) {
+  background: rgba(255, 255, 255, .3);
+}
+
+@media only screen and (min-width: 601px) {
+  #weather-box {
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+
+>>>>>>> bf9d2f0abca24c35cb5ea1ffcd328f0b5105cd02
 }
