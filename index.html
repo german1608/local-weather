@@ -3,46 +3,72 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Local Weather</title>
-  <!-- Compiled and minified CSS -->
+
+  <!--  Style conteng of the page -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Meta conent of the page -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Compiled and minified JavaScript -->
-  
+  <meta name="description" content="A local weather app">
+  <meta name="author" content="German Robayo">
+  <meta name="keyword" content="Web Design, Software, Developer, HTML, CSS, PHP, JavaScript">
 </head>
 <body>
-  <div id="entire-page" class="valign-wrapper">
-    <div id="box">
-      <div class="row">
-        <div class="col s12">
-          <h1 id="title" class="center">City, Country</h1>
+  <div id="entire-page" class="valign-wrapper" style="position: relative;">
+    <!-- Preloader -->
+    <div class="preloader-wrapper big active visible" style="position: absolute;">
+      <div class="spinner-layer">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
         </div>
       </div>
+    </div>
+    <!-- Main containt of the page -->
+    <div id="box" >
+
+      <!-- Title of the page. Carries the location -->
+      <div class="row">
+        <div class="col s12">
+          <h1 id="title" class="center"></h1>
+        </div>
+      </div>
+
+      <!-- Weather box. It has the weather data -->
       <div class="row" style="margin: 0 .5rem;">
         <div id="weather-box" class="col s12 card-panel">
-          <div class="col s6">
-            <h2 id="temperature" class="center-align">27<span style="font-weight: 200;">&#176;C</span></h2>
-            <h5 id="summary">Summary</h5>
-          </div>
-          <div id="icon" class="col s6 valign-wrapper">
-            <img src="icons/clear-night.png" alt="weather-icon" class="responsive-img" />
+          <div class="valign-wrapper">
+            <div class="col s6">
+              <!-- temperature, summary -->
+              <h2 id="temperature"></h2>
+              <h5 id="summary"></h5>
+            </div>
+            <div id="icon" class="col s6">
+            <!-- icon -->
+            </div>
+            
           </div>
           <div class="col s12">
-            <table>
+          <!-- Extra data for the weather -->
+            <table class="centered">
               <tbody>
                 <tr>
                   <td>Wind Speed</td>
-                  <td id="wind-speed">1</td>
+                  <td id="wind-speed"></td>
                 </tr>
                 <tr>
                   <td>Humidity</td>
-                  <td id="humidity">1</td>
+                  <td id="humidity"></td>
                 </tr>
                 <tr>
                   <td>Pressure</td>
-                  <td id="pressure">1</td>
+                  <td id="pressure"></td>
                 </tr>
               </tbody>
             </table>
@@ -52,6 +78,7 @@
     </div>
   </div>
 
+  <!-- Exporting jQuery and materialize.js -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
